@@ -16,7 +16,7 @@
   <img alt="Authorized testing" src="https://img.shields.io/badge/STATUS-AUTHORIZED-16a34a?style=flat-square&labelColor=111827">
 </p>
 
-> **Overall risk rating: CRITICAL.** This controlled assessment identified an attack path from a public-facing login page to confidential patient documents, staff financial records, and corporate ownership information.
+ **Overall risk rating: CRITICAL.** This controlled assessment identified an attack path from a public-facing login page to confidential patient documents, staff financial records, and corporate ownership information.
 
 ##  Project overview
 
@@ -24,24 +24,24 @@ This repository documents a black-box penetration test of the Mediroza General H
 
 Seven findings, ranging from **Medium** to **Critical**, were identified. The central issue was a SQL injection vulnerability in the patient portal login flow. In the authorized test environment, it enabled authentication bypass, access to confidential patient lab-report PDFs, discovery of sensitive PDF metadata, and retrieval of an exposed database backup containing staff salary and shareholder information.
 
-## 🎯 Objectives
+##  Objectives
 
 - Assess the web application from an external, unauthenticated perspective.
 - Identify weaknesses in authentication, input handling, file protection, and server configuration.
 - Demonstrate the real-world impact of each finding in a controlled manner.
 - Document evidence and provide prioritized remediation recommendations.
 
-## ✅ Authorization and scope
+##  Authorization and scope
 
 Testing was conducted with written authorization from the client as part of a controlled Networkwalks educational exercise.
 
 | In scope | Excluded from scope |
 | --- | --- |
 | `https://medirozahospital.com` | Social engineering |
-| Public-facing web application behavior | Denial-of-service testing |
+| Public facing web application behavior | Denial of service testing |
 | Patient portal and discovered web paths within the agreed domain | Any testing outside the agreed domain |
 
-## 🔎 Methodology
+##  Methodology
 
 The assessment followed a structured black-box methodology:
 
@@ -50,7 +50,7 @@ The assessment followed a structured black-box methodology:
 3. **Controlled exploitation** - Demonstration of each issue's impact within the authorized environment.
 4. **Documentation** - Recording of findings, evidence, and remediation recommendations.
 
-## 🧰 Tools used
+##  Tools used
 
 | Tool | Purpose in the assessment |
 | --- | --- |
@@ -63,7 +63,7 @@ The assessment followed a structured black-box methodology:
 | Wget | Downloading files from the web server in the controlled test |
 | ChatGPT | Converting raw SQL data into readable tables during analysis |
 
-## 📌 Executive summary
+##  Executive summary
 
 The target's security posture was assessed as poor. A chain of individually preventable weaknesses enabled an unauthenticated attacker to progress from reconnaissance to patient-document access and, ultimately, access to a database backup exposed through a publicly listed directory.
 
