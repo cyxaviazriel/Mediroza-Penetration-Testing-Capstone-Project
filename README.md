@@ -281,7 +281,7 @@ The combined effect is a serious confidentiality breach with potential privacy, 
 
 [Mediroza Penetration Testing Report.pdf](https://github.com/user-attachments/files/32076421/Mediroza.Penetration.Testing.Report.pdf)
 
-## 💡 Lessons learned
+##  Lessons learned
 
 - Small security flaws can combine into a high-impact attack chain.
 - Authentication errors and database errors reveal valuable information to attackers.
@@ -290,11 +290,11 @@ The combined effect is a serious confidentiality breach with potential privacy, 
 - Backups must never be placed in publicly accessible web directories.
 - Defense in depth is essential: secure input handling, authorization, file storage, server configuration, and data governance must all work together.
 
-## 🏁 Conclusion
+##  Conclusion
 
 This assessment demonstrated a complete path from the login page to highly sensitive internal data using well-known, preventable weaknesses. Critical and High findings should be addressed immediately before the system is used to store or serve real patient data.
 
-## ⚖️ Disclaimer
+##  Disclaimer
 
 This project was produced as part of a controlled educational exercise by Networkwalks. The target was authorized for security testing, and all activity was performed within the agreed scope. The techniques described here must never be used against systems without explicit written permission from the owner.
 
