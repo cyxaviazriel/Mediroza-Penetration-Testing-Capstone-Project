@@ -43,7 +43,7 @@ Testing was conducted with written authorization from the client as part of a co
 
 ##  Methodology
 
-The assessment followed a structured black-box methodology:
+The assessment followed a structured black box methodology:
 
 1. **Reconnaissance** - Passive information gathering using publicly available information and web-based tools.
 2. **Vulnerability identification** - Analysis of application behavior for authentication and input-handling weaknesses.
@@ -71,7 +71,7 @@ The database extract contained sensitive information for **30 hospital employees
 
 Immediate remediation is recommended for all Critical and High findings.
 
-## 🚨 Findings summary
+##  Findings summary
 
 | ID | Finding | Location | Risk |
 | --- | --- | --- | --- |
