@@ -83,7 +83,7 @@ Immediate remediation is recommended for all Critical and High findings.
 | F-06 | Forgotten backup folder with directory listing enabled | `old/` | 🔴 Critical |
 | F-07 | Confidential staff salaries and shareholder data in plain text | `old/mediroza_db_backup_2019.sql` | 🔴 Critical |
 
-## 🔬 Detailed findings
+##  Detailed findings
 
 ### F-01 - Username enumeration on login page
 
@@ -96,7 +96,9 @@ The patient login page returned different error messages for an unknown username
 
 **Evidence placeholder:**
 
-![Username enumeration evidence](docs/evidence/f01-username-enumeration.png)
+<img width="1365" height="734" alt="patient login using sql injection" src="https://github.com/user-attachments/assets/4afdec6d-db5c-4423-b31c-fdceaf2cc9e9" />
+
+<img width="1365" height="736" alt="Tried again using sql injection" src="https://github.com/user-attachments/assets/70bad896-3e47-47a1-9bcf-5c960cc1443f" />
 
 ### F-02 - SQL injection login bypass
 
@@ -106,10 +108,6 @@ The patient login page returned different error messages for an unknown username
 The login form appeared to place user-controlled input directly into a database query. A controlled test produced a MySQL syntax error, confirming that the field was injectable. The assessment then demonstrated that the password check could be bypassed and an administrative session obtained without valid credentials.
 
 **Recommendation:** Replace dynamic query construction with parameterized queries or prepared statements. This is the most important remediation in this report.
-
-**Evidence placeholder:**
-
-![SQL injection login bypass evidence](docs/evidence/f02-sql-injection-login-bypass.png)
 
 ### F-03 - Confidential PDFs accessible after login bypass
 
@@ -121,8 +119,8 @@ After the controlled authentication bypass, the patient portal exposed three dow
 **Recommendation:** Store files outside the web root and deliver them only through server-side authorization checks.
 
 **Evidence placeholder:**
+<img width="1365" height="740" alt="Patient logingphp with sql injection sucessful" src="https://github.com/user-attachments/assets/01fff413-bdf7-430a-8e84-d8b139b69c17" />
 
-![Patient report access evidence](docs/evidence/f03-patient-report-access.png)
 
 ### F-04 - Weak PDF passwords crackable with a wordlist
 
@@ -134,8 +132,8 @@ All three PDFs were password protected, but the passwords were weak and present 
 **Recommendation:** If passwords are retained, enforce a minimum length of 12 characters with uppercase, lowercase, numbers, and symbols. Access control should remain server-side rather than relying on document passwords alone.
 
 **Evidence placeholder:**
+<img width="1351" height="725" alt="patient report" src="https://github.com/user-attachments/assets/875bb9e8-35c3-469f-a70e-0507f6c846f8" />
 
-![Weak PDF password evidence](docs/evidence/f04-weak-pdf-passwords.png)
 
 ### F-05 - Sensitive metadata in patient PDF files
 
@@ -146,9 +144,6 @@ After decryption, metadata analysis identified an internal staff comment that re
 
 **Recommendation:** Remove metadata before distributing files. Internal notes and staff comments must never remain in documents that leave the organization.
 
-**Evidence placeholder:**
-
-![PDF metadata evidence](docs/evidence/f05-sensitive-pdf-metadata.png)
 
 ### F-06 - Forgotten backup folder with directory listing enabled
 
@@ -159,9 +154,8 @@ Reconnaissance identified `/old` in `robots.txt`; the metadata clue confirmed it
 
 **Recommendation:** Disable directory listing (for example, with `Options -Indexes` in Apache configuration or `.htaccess`), remove the backup from the web root immediately, and store backups only in private, access-controlled locations.
 
-**Evidence placeholder:**
+<img width="1363" height="733" alt="2" src="https://github.com/user-attachments/assets/640c44e0-897c-4b4b-adde-6a68beddc411" />
 
-![Directory listing evidence](docs/evidence/f06-directory-listing-backup.png)
 
 ### F-07 - Confidential staff salaries and shareholder data in plain text
 
@@ -174,9 +168,13 @@ The exposed database backup contained plain-text staff and shareholder informati
 
 **Evidence placeholder:**
 
-![Redacted database exposure evidence](docs/evidence/f07-redacted-database-exposure.png)
 
-## 🔗 Attack-chain walkthrough
+<img width="1365" height="767" alt="mediroza old 1" src="https://github.com/user-attachments/assets/1a52f302-4c07-45db-b439-5450c7d7320e" />
+<img width="1363" height="722" alt="mediroza 2" src="https://github.com/user-attachments/assets/4026dad2-5cc6-401d-aaa4-7bf82ea0c0f5" />
+<img width="1365" height="733" alt="mediroza 3" src="https://github.com/user-attachments/assets/3d790113-fe36-4645-91b3-cc1fdaaa83c6" />
+
+
+##  Attack-chain walkthrough
 
 The following sequence shows how the findings combined into a complete exposure path:
 
@@ -218,7 +216,7 @@ flowchart LR
     class I exposure
 ```
 
-## 💥 Impact
+##  Impact
 
 If exploited outside the controlled environment, this chain could enable an unauthenticated attacker to:
 
@@ -231,7 +229,7 @@ If exploited outside the controlled environment, this chain could enable an unau
 
 The combined effect is a serious confidentiality breach with potential privacy, regulatory, financial, and reputational consequences.
 
-## 🧯 Remediation priorities
+##  Remediation priorities
 
 | Priority | Action |
 | --- | --- |
@@ -243,9 +241,29 @@ The combined effect is a serious confidentiality breach with potential privacy, 
 | 🟡 Medium | Strip PDF metadata before external distribution. |
 | 🟡 Medium | Standardize generic failed-login responses to prevent username enumeration. |
 
-## 🖼️ Evidence gallery
+##  Evidence gallery
 
-Add screenshots or redacted evidence files to the paths below after uploading them to GitHub. Avoid screenshots that reveal patient records, staff personal information, passwords, or complete database contents.
+<img width="1365" height="736" alt="Tried again using sql injection" src="https://github.com/user-attachments/assets/ff223e68-6daa-411b-8abb-ee76d887f003" />
+<img width="1365" height="734" alt="patient login using sql injection" src="https://github.com/user-attachments/assets/2a6d717f-b960-4a12-b627-05e0bea9cc1e" />
+<img width="1365" height="767" alt="patient" src="https://github.com/user-attachments/assets/0778b564-e22e-42bc-9751-b6833a9c5a81" />
+<img width="1365" height="740" alt="Patient logingphp with sql injection sucessful" src="https://github.com/user-attachments/assets/69804dac-c4c9-41e5-aa11-b5c4b180ee4a" />
+<img width="1365" height="767" alt="patient pdf unlocked" src="https://github.com/user-attachments/assets/a81c4bc3-26d7-4efc-b180-e5b59795e67c" />
+<img width="1351" height="725" alt="patient report" src="https://github.com/user-attachments/assets/bbcfc678-4297-4fe8-ac40-9e013b9736d7" />
+
+<img width="1365" height="734" alt="PDF 1" src="https://github.com/user-attachments/assets/2c84cdb2-641a-4976-8faf-32d4eca11a77" />
+<img width="1365" height="706" alt="PDF 2" src="https://github.com/user-attachments/assets/505f162a-8f85-4206-bec0-b6564e469fac" />
+<img width="1365" height="697" alt="PDF 3" src="https://github.com/user-attachments/assets/63f1d389-230d-4621-8657-4c666e13b638" />
+
+<img width="1365" height="740" alt="PDF FILE 1 CRACKED SUCESSFULLY" src="https://github.com/user-attachments/assets/cefd74f4-690a-4cb0-9ae9-61ab2c05334e" />
+<img width="1365" height="736" alt="PDF FILE 2 SUCCESSFULLY CRACKED" src="https://github.com/user-attachments/assets/08f470b4-eae2-43df-8088-5b15ed27f46a" />
+<img width="1365" height="718" alt="PDF FILE 3 CRACKED SUCCESSFULLY" src="https://github.com/user-attachments/assets/33cd5f18-7fd1-4f13-9798-8bd49b87bbb3" />
+
+
+<img width="1351" height="721" alt="Shareholder 1" src="https://github.com/user-attachments/assets/4cb82e2b-d678-49b5-829e-33bc4f4a794f" />
+<img width="1365" height="731" alt="Shareholder 2" src="https://github.com/user-attachments/assets/7144581f-eed6-4ae1-80a9-084a800a648d" />
+<img width="1365" height="767" alt="Shareholder 3" src="https://github.com/user-attachments/assets/21278fea-0670-4ccb-90bb-8c8d4e2b393c" />
+<img width="1365" height="730" alt="Shareholder 4" src="https://github.com/user-attachments/assets/4ff6e7f1-6fdc-4722-82d1-8ec468dcdf7a" />
+
 
 | Evidence | Suggested file |
 | --- | --- |
@@ -258,19 +276,10 @@ Add screenshots or redacted evidence files to the paths below after uploading th
 | Directory-listing exposure | `docs/evidence/f06-directory-listing-backup.png` |
 | Redacted database-exposure proof | `docs/evidence/f07-redacted-database-exposure.png` |
 
-## 🎬 Video demonstration
 
-> Add the authorized, redacted demonstration video here.
+##  Full report
 
-`docs/evidence/mediroza-capstone-demonstration.mp4`
-
-[![Watch the video demonstration](docs/evidence/video-thumbnail.png)](docs/evidence/mediroza-capstone-demonstration.mp4)
-
-## 📄 Full report
-
-The complete penetration testing report will be available here:
-
-[Download the Mediroza Penetration Testing Report](docs/Mediroza-Penetration-Testing-Report.pdf)
+[Mediroza Penetration Testing Report.pdf](https://github.com/user-attachments/files/32076421/Mediroza.Penetration.Testing.Report.pdf)
 
 ## 💡 Lessons learned
 
