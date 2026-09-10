@@ -174,7 +174,7 @@ The exposed database backup contained plain-text staff and shareholder informati
 <img width="1365" height="733" alt="mediroza 3" src="https://github.com/user-attachments/assets/3d790113-fe36-4645-91b3-cc1fdaaa83c6" />
 
 
-##  Attack-chain walkthrough
+##  Attack chain walkthrough
 
 The following sequence shows how the findings combined into a complete exposure path:
 
