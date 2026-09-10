@@ -16,7 +16,7 @@
   <img alt="Authorized testing" src="https://img.shields.io/badge/STATUS-AUTHORIZED-16a34a?style=flat-square&labelColor=111827">
 </p>
 
- **Overall risk rating: CRITICAL.** This controlled assessment identified an attack path from a public-facing login page to confidential patient documents, staff financial records, and corporate ownership information.
+ **Overall risk rating: CRITICAL.** This controlled assessment identified an attack path from a public facing login page to confidential patient documents, staff financial records, and corporate ownership information.
 
 ##  Project overview
 
@@ -28,7 +28,7 @@ Seven findings, ranging from **Medium** to **Critical**, were identified. The ce
 
 - Assess the web application from an external, unauthenticated perspective.
 - Identify weaknesses in authentication, input handling, file protection, and server configuration.
-- Demonstrate the real-world impact of each finding in a controlled manner.
+- Demonstrate the real world impact of each finding in a controlled manner.
 - Document evidence and provide prioritized remediation recommendations.
 
 ##  Authorization and scope
