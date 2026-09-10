@@ -242,6 +242,7 @@ The combined effect is a serious confidentiality breach with potential privacy, 
 | 🟡 Medium | Standardize generic failed-login responses to prevent username enumeration. |
 
 ##  Evidence gallery
+<img width="1365" height="731" alt="1" src="https://github.com/user-attachments/assets/0a865426-7e6b-498b-967a-38f2a1988b00" />
 
 <img width="1365" height="736" alt="Tried again using sql injection" src="https://github.com/user-attachments/assets/ff223e68-6daa-411b-8abb-ee76d887f003" />
 <img width="1365" height="734" alt="patient login using sql injection" src="https://github.com/user-attachments/assets/2a6d717f-b960-4a12-b627-05e0bea9cc1e" />
@@ -257,6 +258,9 @@ The combined effect is a serious confidentiality breach with potential privacy, 
 <img width="1365" height="740" alt="PDF FILE 1 CRACKED SUCESSFULLY" src="https://github.com/user-attachments/assets/cefd74f4-690a-4cb0-9ae9-61ab2c05334e" />
 <img width="1365" height="736" alt="PDF FILE 2 SUCCESSFULLY CRACKED" src="https://github.com/user-attachments/assets/08f470b4-eae2-43df-8088-5b15ed27f46a" />
 <img width="1365" height="718" alt="PDF FILE 3 CRACKED SUCCESSFULLY" src="https://github.com/user-attachments/assets/33cd5f18-7fd1-4f13-9798-8bd49b87bbb3" />
+<img width="1365" height="717" alt="EXIFTOOL REPORT 1" src="https://github.com/user-attachments/assets/4a3e8c1b-9108-4d54-94d0-1d17204bda3f" />
+<img width="1365" height="722" alt="EXIFTOOL REPORT 2" src="https://github.com/user-attachments/assets/8723d4c0-f3e0-4f06-adc8-85b2501a7b7f" />
+<img width="1365" height="739" alt="EXIFTOOL REPORT 3" src="https://github.com/user-attachments/assets/5a21bcc1-0a12-46da-9c54-3854a8d02bf4" />
 
 
 <img width="1351" height="721" alt="Shareholder 1" src="https://github.com/user-attachments/assets/4cb82e2b-d678-49b5-829e-33bc4f4a794f" />
